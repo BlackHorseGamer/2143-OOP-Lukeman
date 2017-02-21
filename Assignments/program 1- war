@@ -1,6 +1,11 @@
+#Rob Lukeman
+#Program 1: War Card Game
+
 # -*- coding: utf-8 -*-
 import os
 import random
+
+
 
 #Source: http://codereview.stackexchange.com/questions/82103/ascii-fication-of-playing-cards
 
