@@ -116,14 +116,17 @@ class Player(object):
     self.MaxRolls = rolls
     
   def Roll(self):
-    self.RandomRoll() #for now
+    if self.score < 100:
+      self.RandomRoll()
+    else:
+      print(self.name, " has just reached 100 points and is stopping")
+    
           
   def RandomRoll(self,max_rolls=None):
     self.round_score = 0
     self.round_rolls = 0
     if not max_rolls:
       max_rolls = self.MaxRolls
-    if self.score < 20:
       for i in range(random.randint(1,max_rolls)):
         self.round_rolls += 1
         roll = self.dice.Roll()
@@ -250,7 +253,7 @@ class PigGame(object):
         for p in self.Players:
           if p.score >= self.TargetScore:
             return p.name 
-            print(p.name, " has just reached 20 points and is stopping")
+            
         
         return None
         
